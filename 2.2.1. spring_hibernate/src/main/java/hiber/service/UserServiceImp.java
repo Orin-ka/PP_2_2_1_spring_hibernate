@@ -26,4 +26,16 @@ public class UserServiceImp implements UserService {
       return userDao.listUsers();
    }
 
+   @Transactional
+   @Override
+   public void delete(User user){
+      userDao.delete(user);
+   }
+
+   @Transactional
+   @Override
+   public List<User> carUser(String model, int series) {
+      return userDao.carUser(model, series);
+   }
+
 }
